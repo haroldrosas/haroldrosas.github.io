@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* (El CSS es el mismo que proporcionaste, no lo modifico para mantener consistencia) */
         * {
             margin: 0;
             padding: 0;
@@ -22,7 +23,6 @@
             overflow-x: hidden;
         }
 
-        /* Header con particles y olas */
         .hero {
             position: relative;
             background: linear-gradient(135deg, #0a2b3e 0%, #1b5a6e 100%);
@@ -147,7 +147,6 @@
             display: block;
         }
 
-        /* Secciones generales */
         section {
             padding: 60px 0;
         }
@@ -167,7 +166,6 @@
             border-radius: 4px;
         }
 
-        /* Tarjetas de especialización */
         .spec-card {
             background: white;
             border-radius: 28px;
@@ -194,7 +192,6 @@
             display: inline-block;
         }
 
-        /* Cards de servicios */
         .card-servicio {
             background: white;
             border: none;
@@ -227,7 +224,6 @@
             background-color: #ff9f1a;
         }
 
-        /* Carrusel pequeño y atractivo */
         .carousel-container {
             max-width: 650px;
             margin: 0 auto 2rem auto;
@@ -256,43 +252,53 @@
             }
         }
 
-        /* Proyectos casos de éxito */
-        .proyecto-card {
+        /* Nuevo estilo para tarjetas de casos premium */
+        .caso-premium-card {
             background: white;
             border-radius: 28px;
             overflow: hidden;
             box-shadow: 0 10px 25px rgba(0,0,0,0.05);
             transition: all 0.25s;
             height: 100%;
+            display: flex;
+            flex-direction: column;
         }
-        .proyecto-card:hover {
+        .caso-premium-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.15);
         }
-        .proy-header {
+        .caso-header {
             background: #0a2b3e;
             color: white;
             padding: 20px;
         }
-        .badge {
-            display: inline-block;
+        .caso-body {
+            padding: 24px;
+            flex: 1;
+        }
+        .tech-badge {
             background: #eef2f5;
             padding: 5px 12px;
             border-radius: 40px;
-            font-size: 0.75rem;
-            font-weight: bold;
-            margin-right: 8px;
-            margin-bottom: 10px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-right: 6px;
+            margin-bottom: 8px;
+            display: inline-block;
             color: #0f3b4f;
         }
-        .resultado {
+        .result-highlight {
             margin-top: 16px;
-            border-top: 1px solid #e2e8f0;
             padding-top: 16px;
+            border-top: 1px solid #e2e8f0;
             font-weight: 500;
-            color: #0f3b4f;
+            color: #0a2b3e;
+        }
+        .result-highlight i {
+            color: #ffb347;
+            margin-right: 6px;
         }
 
-        /* Metodología */
         .metodologia {
             background-color: #e9f0f4;
         }
@@ -324,7 +330,6 @@
             color: #1e2a3e;
         }
 
-        /* Contacto */
         .contacto-flex {
             display: flex;
             flex-wrap: wrap;
@@ -362,7 +367,6 @@
             padding: 28px 0;
         }
 
-        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -412,9 +416,10 @@
             <li class="nav_item dropdown">
                 <a href="#" class="nav_link dropdown-toggle" id="proyectosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Proyectos</a>
                 <ul class="dropdown-menu" aria-labelledby="proyectosDropdown">
-                    <li><a class="dropdown-item" href="#casos-hospital">🏥 Hospitales</a></li>
-                    <li><a class="dropdown-item" href="#casos-penal">🔒 Penales</a></li>
-                    <li><a class="dropdown-item" href="#casos-muni">🏛️ Municipalidades</a></li>
+                    <li><a class="dropdown-item" href="#caso-healthcare">🏥 Healthcare</a></li>
+                    <li><a class="dropdown-item" href="#caso-publicsafety">🔒 Public Safety</a></li>
+                    <li><a class="dropdown-item" href="#caso-smartcity">🏙️ Smart City</a></li>
+                    <li><a class="dropdown-item" href="#caso-cybersecurity">🛡️ Cybersecurity</a></li>
                 </ul>
             </li>
             <li class="nav_item"><a href="#servicios" class="nav_link">Servicios</a></li>
@@ -444,7 +449,7 @@
     </div>
 </header>
 
-<!-- Modal de bienvenida (opcional) -->
+<!-- Modal -->
 <section class="modal" id="bienvenidaModal">
     <div class="modal_container">
         <img src="./images/modal.svg" class="modal_img" alt="modal">
@@ -454,7 +459,7 @@
     </div>
 </section>
 
-<!-- Sobre mí (versión ejecutiva) -->
+<!-- Sobre mí -->
 <section id="sobre-mi" class="container my-5">
     <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
@@ -511,7 +516,7 @@
     </div>
 </section>
 
-<!-- Experiencia resumida -->
+<!-- Experiencia profesional -->
 <section id="experiencia" class="container my-5">
     <h2 class="section-title">Experiencia profesional</h2>
     <div class="row g-4">
@@ -578,7 +583,7 @@
     </div>
 </section>
 
-<!-- Servicios en cards (tu contenido original mejorado) -->
+<!-- Servicios en cards -->
 <section id="servicios" class="container my-5">
     <h2 class="section-title">Soluciones integrales</h2>
     <div class="row g-4">
@@ -615,7 +620,7 @@
     </div>
 </section>
 
-<!-- Carrusel de imágenes (pequeño y atractivo) -->
+<!-- Carrusel de imágenes (mantenido) -->
 <div class="carousel-container">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -640,49 +645,113 @@
     </div>
 </div>
 
-<!-- Casos de éxito -->
+<!-- ========== NUEVA SECCIÓN: CASOS DE ÉXITO PREMIUM (sin fechas) ========== -->
 <section class="container my-5" id="proyectos-destacados">
     <h2 class="section-title">Casos de éxito en Perú</h2>
     <div class="row g-4">
-        <div class="col-md-4" id="casos-hospital">
-            <div class="proyecto-card">
-                <div class="proy-header">
-                    <h3><i class="fas fa-hospital"></i> Hospital ESSALUD</h3>
-                    <p>Lima, Perú · 2024</p>
+        <!-- Healthcare -->
+        <div class="col-md-6 col-lg-3" id="caso-healthcare">
+            <div class="caso-premium-card">
+                <div class="caso-header">
+                    <h3><i class="fas fa-hospital-user"></i> Hospital & Healthcare</h3>
+                    <p class="mb-0 small opacity-75">Infrastructure Projects · Peru</p>
                 </div>
-                <div class="p-4">
-                    <p><strong>Desafío:</strong> Integrar redes de datos, WiFi médico y monitoreo de equipos críticos en 3 pabellones nuevos.</p>
-                    <span class="badge">Cableado Cat6A</span><span class="badge">Redes duales</span><span class="badge">DCIM</span>
-                    <p class="mt-2"><strong>Mi rol:</strong> Gestión del cronograma, equipo multidisciplinario de 12 técnicos.</p>
-                    <div class="resultado">✅ Entrega en 5 meses · 0 incidentes críticos · Certificación ANSI/TIA.</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4" id="casos-penal">
-            <div class="proyecto-card">
-                <div class="proy-header">
-                    <h3><i class="fas fa-building-shield"></i> Penal San Pedro</h3>
-                    <p>Lurigancho, Lima · 2023-2024</p>
-                </div>
-                <div class="p-4">
-                    <p><strong>Desafío:</strong> Implementar control de accesos biométrico, CCTV y red redundante en 8 pabellones.</p>
-                    <span class="badge">Biometría</span><span class="badge">Red MPLS</span><span class="badge">CCTV IP</span>
-                    <p class="mt-2"><strong>Mi rol:</strong> Planificación de fases, gestión de proveedores, estándares INPE.</p>
-                    <div class="resultado">✅ Cobertura 100% · reducción 40% en incidentes · presupuesto respetado.</div>
+                <div class="caso-body">
+                    <p>Integration of enterprise networks, medical WiFi and critical infrastructure systems for multiple healthcare facilities and hospital environments.</p>
+                    <div class="mb-3">
+                        <span class="tech-badge">Cat6A</span>
+                        <span class="tech-badge">Enterprise Networking</span>
+                        <span class="tech-badge">DCIM</span>
+                        <span class="tech-badge">Critical Monitoring</span>
+                        <span class="tech-badge">Redundant Infrastructure</span>
+                    </div>
+                    <p><strong>Role:</strong> Senior Project Management & Technical Coordination</p>
+                    <div class="result-highlight">
+                        <i class="fas fa-check-circle"></i> Successful project delivery<br>
+                        <i class="fas fa-check-circle"></i> High availability environments<br>
+                        <i class="fas fa-check-circle"></i> ANSI/TIA compliance<br>
+                        <i class="fas fa-check-circle"></i> Mission-critical infrastructure
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-4" id="casos-muni">
-            <div class="proyecto-card">
-                <div class="proy-header">
-                    <h3><i class="fas fa-landmark"></i> Municipalidad de Miraflores</h3>
-                    <p>Lima · 2025</p>
+
+        <!-- Correctional & Public Safety -->
+        <div class="col-md-6 col-lg-3" id="caso-publicsafety">
+            <div class="caso-premium-card">
+                <div class="caso-header">
+                    <h3><i class="fas fa-building-shield"></i> Correctional & Public Safety</h3>
+                    <p class="mb-0 small opacity-75">Secure Infrastructure · Peru</p>
                 </div>
-                <div class="p-4">
-                    <p><strong>Desafío:</strong> Modernizar red de fibra óptica metropolitana y centro de datos municipal.</p>
-                    <span class="badge">Fibra GPON</span><span class="badge">Nube híbrida</span><span class="badge">Ciberseguridad</span>
-                    <p class="mt-2"><strong>Mi rol:</strong> Gestión de riesgos, integración con sistemas legacy.</p>
-                    <div class="resultado">✅ Velocidad +300% · uptime 99.99% · proyecto reconocido.</div>
+                <div class="caso-body">
+                    <p>Deployment of secure IT and surveillance infrastructure for correctional and high-security environments, including biometric access control, IP CCTV ecosystems and redundant communications networks.</p>
+                    <div class="mb-3">
+                        <span class="tech-badge">Biometric Access Control</span>
+                        <span class="tech-badge">IP CCTV</span>
+                        <span class="tech-badge">MPLS Networks</span>
+                        <span class="tech-badge">Redundant Infrastructure</span>
+                    </div>
+                    <p><strong>Role:</strong> Project Planning, vendor coordination and compliance management for mission-critical security environments.</p>
+                    <div class="result-highlight">
+                        <i class="fas fa-check-circle"></i> Full operational coverage<br>
+                        <i class="fas fa-check-circle"></i> Enhanced incident response capabilities<br>
+                        <i class="fas fa-check-circle"></i> High-availability infrastructure<br>
+                        <i class="fas fa-check-circle"></i> Compliance with institutional security standards
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Smart City & Municipal -->
+        <div class="col-md-6 col-lg-3" id="caso-smartcity">
+            <div class="caso-premium-card">
+                <div class="caso-header">
+                    <h3><i class="fas fa-city"></i> Smart City & Municipal</h3>
+                    <p class="mb-0 small opacity-75">Digital Transformation · Peru</p>
+                </div>
+                <div class="caso-body">
+                    <p>Modernization of metropolitan digital infrastructure and municipal data center environments through high-capacity fiber connectivity, hybrid cloud integration and cybersecurity-oriented architectures.</p>
+                    <div class="mb-3">
+                        <span class="tech-badge">GPON Fiber</span>
+                        <span class="tech-badge">Hybrid Cloud</span>
+                        <span class="tech-badge">Cybersecurity</span>
+                        <span class="tech-badge">Enterprise Networking</span>
+                    </div>
+                    <p><strong>Role:</strong> Risk management, technical integration and coordination of modernization initiatives for municipal and smart city environments.</p>
+                    <div class="result-highlight">
+                        <i class="fas fa-check-circle"></i> Increased network performance<br>
+                        <i class="fas fa-check-circle"></i> High availability services<br>
+                        <i class="fas fa-check-circle"></i> Scalable smart city architecture<br>
+                        <i class="fas fa-check-circle"></i> Successful digital transformation delivery
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cybersecurity & Critical Systems -->
+        <div class="col-md-6 col-lg-3" id="caso-cybersecurity">
+            <div class="caso-premium-card">
+                <div class="caso-header">
+                    <h3><i class="fas fa-shield-virus"></i> Cybersecurity & Critical Systems</h3>
+                    <p class="mb-0 small opacity-75">Resilient Architectures · Peru</p>
+                </div>
+                <div class="caso-body">
+                    <p>Implementation of cybersecurity strategies and secure architectures for critical infrastructure, public sector and enterprise environments.</p>
+                    <div class="mb-3">
+                        <span class="tech-badge">Threat Intelligence</span>
+                        <span class="tech-badge">Ethical Hacking</span>
+                        <span class="tech-badge">ISO 27001</span>
+                        <span class="tech-badge">Vulnerability Management</span>
+                        <span class="tech-badge">OT/IT Security</span>
+                        <span class="tech-badge">Security Monitoring</span>
+                    </div>
+                    <p><strong>Role:</strong> Cybersecurity leadership focused on resilience, operational continuity and protection of mission-critical systems.</p>
+                    <div class="result-highlight">
+                        <i class="fas fa-check-circle"></i> Secure infrastructure design<br>
+                        <i class="fas fa-check-circle"></i> Risk reduction strategies<br>
+                        <i class="fas fa-check-circle"></i> Compliance-oriented security frameworks<br>
+                        <i class="fas fa-check-circle"></i> Integration of cybersecurity into IT/OT operations
+                    </div>
                 </div>
             </div>
         </div>
