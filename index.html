@@ -195,26 +195,66 @@
             display: inline-block;
         }
 
-        /* Cards de servicios */
+        /* Cards de servicios actualizadas (6 tarjetas) */
         .card-servicio {
             background: white;
             border: none;
-            border-radius: 24px;
+            border-radius: 28px;
             transition: transform 0.2s, box-shadow 0.2s;
             box-shadow: 0 8px 20px rgba(0,0,0,0.05);
             height: 100%;
+            display: flex;
+            flex-direction: column;
             overflow: hidden;
         }
         .card-servicio:hover {
             transform: translateY(-6px);
             box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
         }
-        .card-servicio .card-img-top {
-            width: 100%;
-            height: 180px;
-            object-fit: contain;
-            background: #f8fafc;
-            padding: 20px;
+        .card-icon {
+            font-size: 3rem;
+            text-align: center;
+            padding: 30px 0 10px;
+            color: #ffb347;
+        }
+        .card-body-custom {
+            padding: 20px 25px 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-title-custom {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .card-text-custom {
+            color: #4a627a;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .capabilities {
+            margin: 10px 0;
+            text-align: center;
+        }
+        .capability-badge {
+            background: #eef2f5;
+            padding: 4px 10px;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            margin: 3px;
+            display: inline-block;
+            color: #0f3b4f;
+        }
+        .result-items {
+            margin: 15px 0;
+            font-size: 0.85rem;
+        }
+        .result-items i {
+            color: #ffb347;
+            margin-right: 6px;
         }
         .btn-primary {
             background-color: #ffb347;
@@ -222,7 +262,10 @@
             color: #1e2a3e;
             font-weight: bold;
             border-radius: 40px;
-            padding: 8px 20px;
+            padding: 8px 16px;
+            width: 100%;
+            transition: 0.2s;
+            margin-top: auto;
         }
         .btn-primary:hover {
             background-color: #ff9f1a;
@@ -591,37 +634,161 @@
     </div>
 </section>
 
-<!-- Servicios en cards -->
+<!-- ========== NUEVA SECCIÓN: SOLUCIONES INTEGRALES (6 TARJETAS) ========== -->
 <section id="servicios" class="container my-5">
     <h2 class="section-title">Soluciones integrales</h2>
     <div class="row g-4">
-        <div class="col-md-4">
-            <div class="card card-servicio">
-                <img src="./images/cards/Hosting_perspective_matte_s.png" class="card-img-top" alt="Data Center">
-                <div class="card-body">
-                    <h5 class="card-title">Procesamiento De Datos</h5>
-                    <p class="card-text">Diseño, construcción y certificación de Centro de Datos, cableado estructurado, integración con software DCIM/PSIM.</p>
-                    <a href="https://wa.me/51914936879?text=Quisiera%20cotizar%20un%20proyecto%20de%20telecomunicaciónes" class="btn btn-primary">Cotización</a>
+        <!-- 1. Enterprise Infrastructure & Data Center -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card-servicio">
+                <div class="card-icon"><i class="fas fa-database"></i></div>
+                <div class="card-body-custom">
+                    <h5 class="card-title-custom">Enterprise Infrastructure & Data Center</h5>
+                    <p class="card-text-custom">Design, integration and modernization of enterprise infrastructure environments, including compute, storage, virtualization and mission-critical data center ecosystems. Focused on scalable architectures, operational continuity and high-availability platforms for enterprise and government environments.</p>
+                    <div class="capabilities">
+                        <span class="capability-badge">Servers</span>
+                        <span class="capability-badge">Enterprise Storage</span>
+                        <span class="capability-badge">Virtualization</span>
+                        <span class="capability-badge">DCIM/PSIM</span>
+                        <span class="capability-badge">Structured Cabling</span>
+                        <span class="capability-badge">Critical Infrastructure</span>
+                    </div>
+                    <div class="result-items">
+                        <i class="fas fa-check-circle"></i> High-availability architecture<br>
+                        <i class="fas fa-check-circle"></i> Scalable digital infrastructure<br>
+                        <i class="fas fa-check-circle"></i> Operational resilience<br>
+                        <i class="fas fa-check-circle"></i> Enterprise-grade deployment standards
+                    </div>
+                    <a href="https://wa.me/51962524944?text=Quisiera%20cotizar%20un%20proyecto%20de%20Enterprise%20Infrastructure%20%26%20Data%20Center" class="btn btn-primary">Cotizar proyecto</a>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card card-servicio">
-                <img src="./images/cards/Satellite_dish_perspective_matte_s.png" class="card-img-top" alt="Telecom">
-                <div class="card-body">
-                    <h5 class="card-title">Telecomunicaciones</h5>
-                    <p class="card-text">Instalación de Infraestructura de Telecomunicación: Torres autosoportadas, ventadas o arriostradas, antenas. Zonas de difícil acceso.</p>
-                    <a href="https://wa.me/51914936879?text=Quisiera%20cotizar%20un%20proyecto%20de%20telecomunicaciónes" class="btn btn-primary">Cotización</a>
+
+        <!-- 2. Networking & Telecommunications Infrastructure -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card-servicio">
+                <div class="card-icon"><i class="fas fa-network-wired"></i></div>
+                <div class="card-body-custom">
+                    <h5 class="card-title-custom">Networking & Telecommunications</h5>
+                    <p class="card-text-custom">Implementation of advanced networking and telecommunications ecosystems designed to support secure connectivity, distributed operations and resilient communications infrastructure. Covering wired, wireless and fiber-based architectures for enterprise, smart city and critical operations environments.</p>
+                    <div class="capabilities">
+                        <span class="capability-badge">Enterprise Networking</span>
+                        <span class="capability-badge">Fiber Optics</span>
+                        <span class="capability-badge">Wireless Infrastructure</span>
+                        <span class="capability-badge">MPLS</span>
+                        <span class="capability-badge">GPON</span>
+                        <span class="capability-badge">Secure Connectivity</span>
+                    </div>
+                    <div class="result-items">
+                        <i class="fas fa-check-circle"></i> Carrier-grade infrastructure<br>
+                        <i class="fas fa-check-circle"></i> High-performance networking<br>
+                        <i class="fas fa-check-circle"></i> Redundant communication architecture<br>
+                        <i class="fas fa-check-circle"></i> Long-range operational connectivity
+                    </div>
+                    <a href="https://wa.me/51962524944?text=Quisiera%20cotizar%20un%20proyecto%20de%20Networking%20%26%20Telecommunications" class="btn btn-primary">Cotizar proyecto</a>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card card-servicio">
-                <img src="./images/cards/Wi-Fi_perspective_matte_s.png" class="card-img-top" alt="Radio Enlaces">
-                <div class="card-body">
-                    <h5 class="card-title">Radio Enlaces</h5>
-                    <p class="card-text">Instalación y configuración de sistemas de radio enlace Punto a Punto y redes de largo alcance.</p>
-                    <a href="https://wa.me/51914936879?text=Quisiera%20cotizar%20un%20proyecto%20de%20telecomunicaciónes" class="btn btn-primary">Cotización</a>
+
+        <!-- 3. Smart Security & Public Safety Systems -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card-servicio">
+                <div class="card-icon"><i class="fas fa-shield-virus"></i></div>
+                <div class="card-body-custom">
+                    <h5 class="card-title-custom">Smart Security & Public Safety</h5>
+                    <p class="card-text-custom">Integration of intelligent security and public safety platforms for mission-critical environments, combining video surveillance, monitoring systems and electronic security technologies. Designed to enhance operational visibility, incident response and infrastructure protection across enterprise and governmental sectors.</p>
+                    <div class="capabilities">
+                        <span class="capability-badge">IP CCTV</span>
+                        <span class="capability-badge">Video Analytics</span>
+                        <span class="capability-badge">Access Control</span>
+                        <span class="capability-badge">Monitoring Centers</span>
+                        <span class="capability-badge">Fire Detection</span>
+                        <span class="capability-badge">Public Safety Platforms</span>
+                    </div>
+                    <div class="result-items">
+                        <i class="fas fa-check-circle"></i> Centralized security operations<br>
+                        <i class="fas fa-check-circle"></i> Intelligent monitoring ecosystems<br>
+                        <i class="fas fa-check-circle"></i> Mission-critical surveillance<br>
+                        <i class="fas fa-check-circle"></i> Secure operational environments
+                    </div>
+                    <a href="https://wa.me/51962524944?text=Quisiera%20cotizar%20un%20proyecto%20de%20Smart%20Security%20%26%20Public%20Safety" class="btn btn-primary">Cotizar proyecto</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Cloud, Virtualization & Digital Transformation -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card-servicio">
+                <div class="card-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                <div class="card-body-custom">
+                    <h5 class="card-title-custom">Cloud, Virtualization & Digital Transformation</h5>
+                    <p class="card-text-custom">Deployment of modern IT architectures leveraging virtualization, hybrid cloud environments and digital transformation strategies to optimize operational efficiency and scalability. Focused on secure integration, modernization and continuity of enterprise technology ecosystems.</p>
+                    <div class="capabilities">
+                        <span class="capability-badge">Hybrid Cloud</span>
+                        <span class="capability-badge">Virtualization</span>
+                        <span class="capability-badge">IT Modernization</span>
+                        <span class="capability-badge">Enterprise Platforms</span>
+                        <span class="capability-badge">Systems Integration</span>
+                    </div>
+                    <div class="result-items">
+                        <i class="fas fa-check-circle"></i> Scalable digital ecosystems<br>
+                        <i class="fas fa-check-circle"></i> Infrastructure modernization<br>
+                        <i class="fas fa-check-circle"></i> Secure cloud integration<br>
+                        <i class="fas fa-check-circle"></i> Business continuity alignment
+                    </div>
+                    <a href="https://wa.me/51962524944?text=Quisiera%20cotizar%20un%20proyecto%20de%20Cloud%20%26%20Digital%20Transformation" class="btn btn-primary">Cotizar proyecto</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Cybersecurity & Critical Systems Protection -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card-servicio">
+                <div class="card-icon"><i class="fas fa-lock"></i></div>
+                <div class="card-body-custom">
+                    <h5 class="card-title-custom">Cybersecurity & Critical Systems</h5>
+                    <p class="card-text-custom">Implementation of cybersecurity frameworks and resilient security architectures for enterprise, government and critical infrastructure environments. Combining governance, threat intelligence and operational security principles to protect digital assets, networks and mission-critical operations.</p>
+                    <div class="capabilities">
+                        <span class="capability-badge">ISO 27001</span>
+                        <span class="capability-badge">Threat Intelligence</span>
+                        <span class="capability-badge">Ethical Hacking</span>
+                        <span class="capability-badge">OT Security</span>
+                        <span class="capability-badge">Security Monitoring</span>
+                        <span class="capability-badge">Risk Management</span>
+                    </div>
+                    <div class="result-items">
+                        <i class="fas fa-check-circle"></i> Secure-by-design environments<br>
+                        <i class="fas fa-check-circle"></i> Critical asset protection<br>
+                        <i class="fas fa-check-circle"></i> Risk-oriented security architecture<br>
+                        <i class="fas fa-check-circle"></i> Operational resilience and continuity
+                    </div>
+                    <a href="https://wa.me/51962524944?text=Quisiera%20cotizar%20un%20proyecto%20de%20Cybersecurity%20%26%20Critical%20Systems" class="btn btn-primary">Cotizar proyecto</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. Power, Automation & Smart Technologies -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card-servicio">
+                <div class="card-icon"><i class="fas fa-microchip"></i></div>
+                <div class="card-body-custom">
+                    <h5 class="card-title-custom">Power, Automation & Smart Tech</h5>
+                    <p class="card-text-custom">Integration of critical power systems, intelligent monitoring and automation technologies for resilient and efficient operational environments. Including energy continuity platforms, IoT ecosystems and professional AV solutions for enterprise and smart infrastructure deployments.</p>
+                    <div class="capabilities">
+                        <span class="capability-badge">Critical Power</span>
+                        <span class="capability-badge">UPS Systems</span>
+                        <span class="capability-badge">IoT</span>
+                        <span class="capability-badge">Automation</span>
+                        <span class="capability-badge">Smart Monitoring</span>
+                        <span class="capability-badge">Professional AV</span>
+                    </div>
+                    <div class="result-items">
+                        <i class="fas fa-check-circle"></i> Operational continuity<br>
+                        <i class="fas fa-check-circle"></i> Intelligent infrastructure management<br>
+                        <i class="fas fa-check-circle"></i> Energy resilience<br>
+                        <i class="fas fa-check-circle"></i> Smart technology integration
+                    </div>
+                    <a href="https://wa.me/51962524944?text=Quisiera%20cotizar%20un%20proyecto%20de%20Power%20%26%20Automation" class="btn btn-primary">Cotizar proyecto</a>
                 </div>
             </div>
         </div>
@@ -803,7 +970,7 @@
     </div>
 </footer>
 
-<a href="https://wa.me/51914936879?text=Hola%20Harold%2C%20vi%20tu%20portafolio%20de%20PM%20y%20ciberseguridad" class="whatsapp-float" target="_blank">
+<a href="https://wa.me/51962524944?text=Hola%20Harold%2C%20vi%20tu%20portafolio%20de%20PM%20y%20ciberseguridad" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
 </a>
 
@@ -840,7 +1007,7 @@
         });
     });
 
-    // Formulario que envía a WhatsApp (número 51914936879)
+    // Formulario que envía a WhatsApp (número 51962524944)
     document.getElementById('contactForm').addEventListener('submit', function(e) {
         e.preventDefault();
         const nombre = document.getElementById('nombre').value.trim();
@@ -858,7 +1025,7 @@
         if (telefono) texto += `Teléfono: ${telefono}\n`;
         texto += `Mensaje: ${mensaje}\n\n(Enviado desde tu portafolio web)`;
 
-        const url = `https://wa.me/51914936879?text=${encodeURIComponent(texto)}`;
+        const url = `https://wa.me/51962524944?text=${encodeURIComponent(texto)}`;
         window.open(url, '_blank');
 
         document.getElementById('formStatus').innerHTML = '✅ Redirigiendo a WhatsApp... Envía el mensaje para contactarte.';
