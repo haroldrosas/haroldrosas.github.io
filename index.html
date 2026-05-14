@@ -62,7 +62,7 @@
             pointer-events: none;
         }
 
-        /* ========== PARTICULAS (encima del grid pero debajo del contenido) ========== */
+        /* ========== PARTICULAS ========== */
         #particles-js {
             position: fixed;
             width: 100%;
@@ -406,7 +406,11 @@
             font-size: 1.5rem;
             border: 1px solid rgba(255,255,255,0.2);
         }
-        .counter-number { font-size: 2.5rem; font-weight: 800; color: #ffb347; }
+        .counter-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #ffb347;
+        }
         footer {
             background: rgba(10, 43, 62, 0.8);
             backdrop-filter: blur(8px);
@@ -562,7 +566,7 @@
         </div>
     </div>
 
-    <!-- Sobre mí + contadores (reveal) -->
+    <!-- Sobre mí + contadores (valores fijos con +) -->
     <section id="sobre-mi" class="container my-5 reveal">
         <div class="row justify-content-center text-center">
             <div class="col-lg-8">
@@ -572,9 +576,27 @@
             </div>
         </div>
         <div class="row text-center mt-5 g-4">
-            <div class="col-md-4" data-aos="zoom-in"><div class="glass-card p-4"><i class="fas fa-briefcase fa-3x text-warning"></i><h3 class="counter-number" id="yearsExp">7</h3><p>Años de experiencia</p></div></div>
-            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100"><div class="glass-card p-4"><i class="fas fa-project-diagram fa-3x text-warning"></i><h3 class="counter-number" id="projectsCount">0</h3><p>Proyectos exitosos</p></div></div>
-            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200"><div class="glass-card p-4"><i class="fas fa-certificate fa-3x text-warning"></i><h3 class="counter-number" id="certsCount">0</h3><p>Certificaciones</p></div></div>
+            <div class="col-md-4" data-aos="zoom-in">
+                <div class="glass-card p-4">
+                    <i class="fas fa-briefcase fa-3x text-warning"></i>
+                    <h3 class="counter-number">6+</h3>
+                    <p>Años de experiencia</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                <div class="glass-card p-4">
+                    <i class="fas fa-project-diagram fa-3x text-warning"></i>
+                    <h3 class="counter-number">20+</h3>
+                    <p>Proyectos exitosos</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="glass-card p-4">
+                    <i class="fas fa-certificate fa-3x text-warning"></i>
+                    <h3 class="counter-number">8+</h3>
+                    <p>Certificaciones</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -748,16 +770,7 @@
         typeSpeed: 60, backSpeed: 40, loop: true
     });
 
-    // Contadores
-    function animateCounter(id, end, duration) {
-        let obj = document.getElementById(id);
-        if (!obj) return;
-        let start = 0, stepTime = duration / end, current = start;
-        let timer = setInterval(() => { current++; obj.innerText = current; if (current >= end) clearInterval(timer); }, stepTime);
-    }
-    animateCounter('yearsExp', 12, 1500);
-    animateCounter('projectsCount', 45, 1500);
-    animateCounter('certsCount', 28, 1500);
+    // Contadores ya están como valores estáticos 6+, 20+, 8+, así que no necesitamos animación numérica.
 
     // Dark/light mode
     const themeToggle = document.getElementById('themeToggle');
