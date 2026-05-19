@@ -637,7 +637,85 @@ body.light-mode .cert-card {
             </figure>
         </section>
     </header>
+<!-- ========== SECCIÓN EJECUTIVA ========== -->
+<style>
+    /* Estos estilos ya existen en tu página, pero los incluyo por si los necesitas de forma aislada */
+    .glass-card {
+        background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+        backdrop-filter: blur(14px);
+        border-radius: 28px;
+        border: 1px solid rgba(255,255,255,0.06);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease, border-color 0.2s ease;
+    }
+    .glass-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 35px -12px rgba(0,0,0,0.3);
+        border-color: rgba(255,180,70,0.5);
+    }
+    .skill-badge {
+        background: rgba(255,255,255,0.12);
+        padding: 5px 12px;
+        border-radius: 30px;
+        font-size: 0.7rem;
+        margin: 3px;
+        display: inline-block;
+        font-weight: 500;
+    }
+    /* Para el color naranja */
+    .text-warning {
+        color: #ffb347 !important;
+    }
+    /* Clase para animación al hacer scroll (opcional) */
+    .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 1s ease;
+    }
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
 
+<section class="container my-5 reveal">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="glass-card p-5 text-center">
+                <h3 class="mb-3" style="font-weight: 600;">
+                    Diseño y ejecución de infraestructura crítica con enfoque en 
+                    <span style="color:#ffb347">continuidad operativa</span> y 
+                    <span style="color:#ffb347">reducción de riesgo</span>
+                </h3>
+                <p class="lead" style="opacity:0.85;">
+                    Mi metodología combina PMI, arquitectura OT/IT y estándares ISO 27001 
+                    para garantizar que cada proyecto no solo funcione, sino que sea 
+                    <strong>resiliente, auditable y escalable</strong> frente a amenazas y fallos.
+                </p>
+                <div class="mt-4 d-flex flex-wrap justify-content-center gap-3">
+                    <span class="skill-badge">+99.9% Uptime</span>
+                    <span class="skill-badge">ROI medible en < 18 meses</span>
+                    <span class="skill-badge">Cumplimiento normativo</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Script para activar la animación "reveal" al hacer scroll (opcional, si no lo tienes global)
+    (function() {
+        const reveals = document.querySelectorAll('.reveal');
+        function checkReveal() {
+            reveals.forEach(reveal => {
+                const top = reveal.getBoundingClientRect().top;
+                if (top < window.innerHeight - 100) reveal.classList.add('active');
+            });
+        }
+        window.addEventListener('scroll', checkReveal);
+        checkReveal();
+    })();
+</script>
     <!-- Métricas actualizadas -->
     <section class="container my-5 reveal">
         <div class="row g-4">
