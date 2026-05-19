@@ -37,9 +37,9 @@
             left: 0;
             z-index: -3;
             background:
-                radial-gradient(circle at 20% 20%, rgba(255, 179, 71, 0.12), transparent 25%),
-                radial-gradient(circle at 80% 30%, rgba(0, 180, 255, 0.10), transparent 25%),
-                radial-gradient(circle at 50% 80%, rgba(120, 0, 255, 0.10), transparent 30%);
+                radial-gradient(circle at 20% 20%, rgba(255, 179, 71, 0.15), transparent 25%),
+                radial-gradient(circle at 80% 30%, rgba(0, 180, 255, 0.12), transparent 25%),
+                radial-gradient(circle at 50% 80%, rgba(120, 0, 255, 0.12), transparent 30%);
             animation: auroraMove 15s infinite alternate ease-in-out;
         }
 
@@ -62,7 +62,7 @@
             pointer-events: none;
         }
 
-        /* ========== PARTICULAS ========== */
+        /* ========== PARTICULAS MÁS VISIBLES ========== */
         #particles-js {
             position: fixed;
             width: 100%;
@@ -71,21 +71,22 @@
             left: 0;
             z-index: -1;
             pointer-events: none;
+            opacity: 1;
         }
 
-        /* ========== GLOW DEL MOUSE (REDUCIDO) ========== */
+        /* ========== GLOW DEL MOUSE ========== */
         .mouse-glow {
             position: fixed;
-            width: 180px;
-            height: 180px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             pointer-events: none;
-            background: radial-gradient(circle, rgba(255, 179, 71, 0.2), transparent 70%);
+            background: radial-gradient(circle, rgba(255, 179, 71, 0.25), transparent 70%);
             transform: translate(-50%, -50%);
             z-index: 0;
             transition: transform 0.05s linear;
-            filter: blur(40px);
-            opacity: 0.4;
+            filter: blur(50px);
+            opacity: 0.5;
         }
 
         /* ========== SCROLL PROGRESS ========== */
@@ -119,7 +120,7 @@
         }
         body.light-mode .hero,
         body.light-mode .glass-nav {
-            background: rgba(8, 12, 20, 0.7);
+            background: rgba(8, 12, 20, 0.6);
         }
         body.light-mode .nav_link,
         body.light-mode .hero_title,
@@ -135,14 +136,14 @@
             z-index: 2;
         }
 
-        /* ========== HERO CON MÁS TRANSPARENCIA ========== */
+        /* ========== HERO CON FONDO TRANSPARENTE (para ver partículas) ========== */
         .hero {
             position: relative;
             min-height: 100vh;
-            background: radial-gradient(circle at top left, rgba(0,212,255,0.08), transparent 40%),
-                        radial-gradient(circle at bottom right, rgba(255,179,71,0.08), transparent 40%),
-                        linear-gradient(135deg, rgba(7,12,22,0.7), rgba(10,15,28,0.8));
-            backdrop-filter: blur(8px);
+            background: radial-gradient(circle at top left, rgba(0,212,255,0.05), transparent 40%),
+                        radial-gradient(circle at bottom right, rgba(255,179,71,0.05), transparent 40%),
+                        transparent;
+            backdrop-filter: blur(4px);
             color: white;
             overflow: hidden;
             border-radius: 0 0 50px 50px;
@@ -169,14 +170,14 @@
             margin-bottom: 2rem;
         }
 
-        /* ========== GLASS-NAV MÁS SUTIL ========== */
+        /* ========== GLASS-NAV ========== */
         .glass-nav {
-            background: rgba(10, 15, 28, 0.4);
+            background: rgba(10, 15, 28, 0.35);
             backdrop-filter: blur(16px);
             border-radius: 28px;
             margin-top: 1.5rem;
             padding: 0.7rem 1.8rem;
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
             display: flex;
             align-items: center;
@@ -426,7 +427,7 @@
             font-size: 0.85rem;
         }
         
-        /* ========== TECH ECOSYSTEM MEJORADO ========== */
+        /* ========== TECH ECOSYSTEM ========== */
         .tech-ecosystem {
             background: rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(10px);
@@ -644,7 +645,7 @@
         </div>
     </section>
 
-    <!-- TRUSTED TECHNOLOGY ECOSYSTEM MEJORADO -->
+    <!-- TRUSTED TECHNOLOGY ECOSYSTEM -->
     <section id="tecnologias" class="container my-5 reveal">
         <h2 class="section-title">Trusted Technology Ecosystem</h2>
         <div class="tech-ecosystem">
@@ -763,13 +764,13 @@
     AOS.init({ duration: 800, once: true });
     particlesJS("particles-js", {
         particles: {
-            number: { value: 70, density: { enable: true, value_area: 800 } },
+            number: { value: 100, density: { enable: true, value_area: 800 } },
             color: { value: "#ffb347" },
             shape: { type: "circle" },
-            opacity: { value: 0.35, random: true, anim: { enable: true, speed: 0.8, opacity_min: 0.1 } },
-            size: { value: 2, random: true, anim: { enable: true, speed: 1.5, size_min: 0.2 } },
-            line_linked: { enable: true, distance: 150, color: "#ffb347", opacity: 0.2, width: 0.6 },
-            move: { enable: true, speed: 0.6, direction: "none", random: true, out_mode: "out" }
+            opacity: { value: 0.5, random: true, anim: { enable: true, speed: 1, opacity_min: 0.2 } },
+            size: { value: 2.5, random: true, anim: { enable: true, speed: 2, size_min: 0.5 } },
+            line_linked: { enable: true, distance: 150, color: "#ffb347", opacity: 0.3, width: 0.8 },
+            move: { enable: true, speed: 0.8, direction: "none", random: true, out_mode: "out" }
         },
         interactivity: { detect_on: "canvas", events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: true, mode: "push" }, resize: true } },
         retina_detect: true
