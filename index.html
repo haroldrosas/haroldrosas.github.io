@@ -615,9 +615,35 @@
         @media (max-width: 768px) {
             .hero_title { font-size: 2.2rem; }
             .section-title { font-size: 1.8rem; }
-            .contacto-flex { flex-direction: column; }
+            .contacto-flex { flex-direction: column; padding: 20px; }
             .tech-logo-grid { gap: 0.5rem; }
             .tech-logo-item { font-size: 0.75rem; padding: 4px 12px; }
+
+            /* Ajustes de padding lateral en móvil */
+            .container {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+            .glass-nav {
+                margin-left: 10px;
+                margin-right: 10px;
+                width: calc(100% - 20px);
+                padding: 0.7rem 1rem;
+            }
+            .hero_main {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            .hero_texts, .hero_picture {
+                padding: 0 5px;
+            }
+            .glass-card, .spec-card, .card-servicio, .contacto-flex, .step {
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+            .contact-info-value .glass-card, .contact-form .glass-card {
+                margin: 0;
+            }
         }
     </style>
 </head>
